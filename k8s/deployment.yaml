@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: undock
+  labels:
+    app: my-undock-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels: 
+      app: my-undock-app
+  template:
+    metadata:
+      labels:
+        app: my-undock-app
+    spec:
+      containers:
+        - name: cstmnginx
+          image: kopilnagi/cstmnginx:v2
+          ports:
+            - containerPort: 80

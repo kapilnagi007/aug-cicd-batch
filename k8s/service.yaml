@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: undock-svc
+spec:
+  type: NodePort
+  selector:
+    app: my-undock-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
