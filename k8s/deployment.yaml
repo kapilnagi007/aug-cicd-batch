@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: cstmnginx
-          image: kopilnagi/cstmnginx:v2
+          image: kopilnagi/cstmnginx:v3
           ports:
             - containerPort: 80

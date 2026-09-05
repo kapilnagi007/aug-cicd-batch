@@ -140,4 +140,16 @@ dist
 # Vite files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+
+
+# Ignoring TF Files
+.terraform/
+.terraform.lock.hcl
+
+*.tfstate
+*.tfstate.*
+
+*.tfvars
+*.tfvars.json
 .vite/
