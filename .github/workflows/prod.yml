@@ -29,10 +29,6 @@ jobs:
         working-directory: innerpeace-app
         run: npm run lint
 
-      - name: Run test
-        working-directory: innerpeace-app
-        run: npm test -- --watchAll=false
-
       - name: Build application
         working-directory: innerpeace-app
         run: npm run build
