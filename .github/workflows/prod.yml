@@ -1,0 +1,33 @@
+name: Innerpeace CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+            node-version: 20
+            cache: npm
+
+      - name: Install Dependencies
+        run: npm i
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run test
+        run: npm test -- --watchAll=false
+
+      - name: Build application
+        run: npm run build 
