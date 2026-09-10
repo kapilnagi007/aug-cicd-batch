@@ -4,12 +4,17 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm i
+RUN npm install
 
 COPY . .
+
 RUN npm run build
 
-COPY --from=build /app/build usr/share/nginx/html
+
+# Stage 2 Run with nginx
+FROM nginx:alpine
+
+COPY --from=build /app/build /usr/share/nginx/html
 
 EXPOSE 80
 
