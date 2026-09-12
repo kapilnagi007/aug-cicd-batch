@@ -1,4 +1,4 @@
-name: Innerpeace CI Pipeline
+name: Innerpeace CICD Pipeline
 
 on:
   push:
